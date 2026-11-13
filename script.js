@@ -22,6 +22,7 @@ startButton.addEventListener("click", function() {
 checkbutton.addEventListener("click", function() {
 
     const userInput = piInput.value.replace(/\s/g, "");
+    const piDigits = pi.slice(2);
 
     let correctCount = 0;
     let hasErrors = false;
@@ -33,7 +34,7 @@ checkbutton.addEventListener("click", function() {
         const digit = document.createElement("span");
         digit.textContent = userInput[i];
 
-        if (userInput[i] === pi[i]) {
+        if (userInput[i] === piDigits[i]) {
             digit.style.color = "#A6FF8F";
             correctCount++;
         } else {
