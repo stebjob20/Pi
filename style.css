@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #2f0f62bc;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    padding: 30px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+p {
+    color: #a5aabd;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+button {
+    width: 80%;
+    max-width: 250px;
+    padding: 16px;
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: #db2b4e78;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    min-height: 180px;
+    margin: 15px auto 0;
+    padding: 15px;
+
+    resize: vertical;
+
+    background-color: #1c2130;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+
+    border: 1px solid #343b50;
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-family: monospace;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #7164d2;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#comparison {
+    overflow-wrap: anywhere;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background-color: #343047;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #A6FF8F;
+    border-radius: 10px;
+    transition: width 0.3s;
+}
+
+/* Адаптация для телефонов */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 16px;
+        align-items: flex-start;
+    }
+
+    section {
+        margin-top: 12vh;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    button {
+        width: 100%;
+        max-width: none;
+        padding: 15px;
+    }
+
+    textarea {
+        min-height: 160px;
+        font-size: 17px;
+    }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 360px) {
+    .container {
+        padding: 16px 12px;
+    }
+
+    section {
+        margin-top: 8vh;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    textarea {
+        min-height: 140px;
+    }
+}

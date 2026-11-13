@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PiZdec</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2f0f62">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <main id="container">
+        <!-- Главный экран -->
+        <section id="home-screen">
+            <h1>PiZdec</h1>
+            <p>Piкми тренажёр для числа π</p>
+
+            <button id="start-button">Жми</button>
+        </section>
+
+        <!-- Игровой экран -->
+        <section id="game-screen" hidden>
+            <h2>Запомни число π</h2>
+
+            <p>Введи цифры числа π:</p>
+
+            <textarea
+                id="pi-input"
+                placeholder="Вводи цифры!!!"
+            ></textarea>
+
+            <button id="check-button">Проверить</button>
+            <button id="reset-button">Заново</button>
+
+            <div id="result"></div>
+            <div id="comparison"></div>
+            <div id="progress">
+                <p id="progress-text"></p>
+                <div class="progress-track">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="pi.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
