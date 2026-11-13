@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "pimemory-v1";
+const CACHE_NAME = "pimemory-v2";
 
 const FILES_TO_CACHE = [
     "./",
@@ -7,7 +7,10 @@ const FILES_TO_CACHE = [
     "./style.css",
     "./script.js",
     "./pi.js",
-    "./manifest.json"
+    "./manifest.json",
+    "./icon-192.png",
+    "./icon-512.png",
+    "./apple-touch-icon.png"
 ];
 
 // Устанавливаем Service Worker и сохраняем файлы
