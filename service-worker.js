@@ -8,7 +8,6 @@ const FILES_TO_CACHE = [
     './pi.js',
     './script.js',
     './manifest.json',
-    './apple-touch-icon.png'
 ];
 
 // Установка: кладём все файлы в кэш
