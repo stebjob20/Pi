@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pizdec-v3';
+const CACHE_NAME = 'pizdec-v4';
 
 
 const FILES_TO_CACHE = [
