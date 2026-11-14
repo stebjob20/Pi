@@ -1,49 +1,49 @@
+const CACHE_NAME = 'pizdec-v1';
 
-const CACHE_NAME = "pimemory-v6";
 
 const FILES_TO_CACHE = [
-    "./",
-    "./index.html",
-    "./style.css",
-    "./script.js",
-    "./pi.js",
-    "./manifest.json",
-    "./icon-192.png",
-    "./icon-512.png",
-    "./apple-touch-icon.png"
+    './',
+    './index.html',
+    './style.css',
+    './pi.js',
+    './script.js',
+    './manifest.json',
+    './apple-touch-icon.png'
 ];
 
-// Устанавливаем Service Worker и сохраняем файлы
-self.addEventListener("install", function(event) {
+// Установка: кладём все файлы в кэш
+self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then(function(cache) {
-            return cache.addAll(FILES_TO_CACHE);
-        })
+        caches.open(CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
     );
+    self.skipWaiting();
 });
 
-// Удаляем старые версии кэша
-self.addEventListener("activate", function(event) {
+// Активация: удаляем старые версии кэша
+self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then(function(cacheNames) {
-            return Promise.all(
-                cacheNames
-                    .filter(function(name) {
-                        return name !== CACHE_NAME;
-                    })
-                    .map(function(name) {
-                        return caches.delete(name);
-                    })
-            );
-        })
+        caches.keys().then((keys) =>
+            Promise.all(
+                keys
+                    .filter((key) => key !== CACHE_NAME)
+                    .map((key) => caches.delete(key))
+            )
+        )
     );
+    self.clients.claim();
 });
 
-// Отдаём файлы из кэша, если они доступны
-self.addEventListener("fetch", function(event) {
+// Запросы: сначала сеть (свежая версия), если нет интернета - кэш
+self.addEventListener('fetch', (event) => {
+    if (event.request.method !== 'GET') return;
+
     event.respondWith(
-        caches.match(event.request).then(function(response) {
-            return response || fetch(event.request);
-        })
+        fetch(event.request)
+            .then((response) => {
+                const copy = response.clone();
+                caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+                return response;
+            })
+            .catch(() => caches.match(event.request))
     );
 });
