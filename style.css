@@ -122,7 +122,7 @@ textarea:focus {
 }
 
 /* Поле ввода числа Пи
-   (стоит ДО медиазапросов, чтобы они могли переопределять эти стили) */
+   
 .pi-input-container {
     width: 80%;
     max-width: 400px;
@@ -132,7 +132,7 @@ textarea:focus {
 
     display: flex;
     align-items: flex-start;
-    gap: 4px; /* отступ между "3." и полем ввода */
+    gap: 0px; 
 
     background-color: #1c2130;
     border: 1px solid #343b50;
