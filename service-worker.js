@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "pimemory-v4";
+const CACHE_NAME = "pimemory-v0";
 
 const FILES_TO_CACHE = [
     "./",
