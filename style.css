@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -154,6 +155,10 @@ textarea:focus {
         min-height: 160px;
         font-size: 17px;
     }
+
+    .pi-prefix {
+        font-size: 17px;
+    }
 }
 
 /* Адаптация для очень маленьких экранов */
@@ -179,8 +184,7 @@ textarea:focus {
     }
 }
 
-
-
+/* Поле ввода числа Пи */
 .pi-input-container {
     width: 80%;
     max-width: 400px;
@@ -198,6 +202,7 @@ textarea:focus {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
+/* Префикс 3. */
 .pi-prefix {
     color: white;
     font-size: 18px;
@@ -205,6 +210,7 @@ textarea:focus {
     line-height: 1.5;
 }
 
+/* Поле для ввода цифр */
 .pi-input-container textarea {
     width: 100%;
     min-height: 148px;
@@ -219,9 +225,11 @@ textarea:focus {
 
     font-size: 18px;
     font-family: monospace;
+    line-height: 1.5;
 }
 
 .pi-input-container textarea:focus {
     outline: none;
     border: none;
 }
+
